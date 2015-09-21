@@ -34,7 +34,7 @@ The `--opt` values provided to `docker volume create` override those options.
 #### Opts Description:
 
 **root** - *sets the root node to mount into the container. By default it will use the base node.*  
-For instance, your k/v store has a strucute like so:
+For instance, your k/v store has a structure like so:
 ```
 /
 |__ foo
