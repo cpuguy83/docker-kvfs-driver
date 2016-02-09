@@ -6,8 +6,8 @@ import (
 	"os"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/calavera/dkvolume"
 	"github.com/docker/docker/pkg/signal"
+	"github.com/docker/go-plugins-helpers/volume"
 	"github.com/docker/libkv/store/boltdb"
 	"github.com/docker/libkv/store/consul"
 	"github.com/docker/libkv/store/etcd"
@@ -80,7 +80,7 @@ func main() {
 		kvfs.cleanup()
 	})
 
-	h := dkvolume.NewHandler(kvfs)
+	h := volume.NewHandler(kvfs)
 	if err := h.ServeUnix("root", *flListen); err != nil {
 		logrus.Fatal(err)
 	}
